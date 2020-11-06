@@ -13,7 +13,7 @@ public class RemoveByTime : MonoBehaviour
         this.timeElapsed = 0.0f;
     }
 
-    
+
 
     // Update is called once per frame
     void Update()

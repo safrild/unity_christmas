@@ -47,4 +47,11 @@ public class CharacterMovement : MonoBehaviour
         theScale.x *= -1;
         this.transform.localScale = theScale;
     }
+
+    void OnCollisionEnter2D(Collision2D col)
+        {
+            if(col.gameObject.tag=="Enemy") {
+				GameObject.FindGameObjectWithTag("GameManager").GetComponent<RespawnManager>().reset();
+            }
+        }
 }
