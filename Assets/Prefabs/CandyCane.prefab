@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6964168589783805856}
   - component: {fileID: 6964168589783805857}
   - component: {fileID: -806711172747826529}
+  - component: {fileID: 3509629871636724767}
   m_Layer: 0
   m_Name: CandyCane
   m_TagString: Untagged
@@ -197,3 +198,17 @@ PolygonCollider2D:
       - {x: -1.5749999, y: -3.205}
       - {x: -1.505, y: -3.0149999}
       - {x: -1.4649999, y: -2.895}
+--- !u!114 &3509629871636724767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6964168589783805863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6289b07cc81115a44b81c71c7f479cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLimit: 2
+  timeElapsed: 0
