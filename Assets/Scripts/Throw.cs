@@ -21,8 +21,6 @@ public class Throw : MonoBehaviour
             itemPool.Add(candyCaneClone);
 
         }
-
-
     }
 
     // Update is called once per frame
