@@ -59,20 +59,18 @@ public class TileManager : MonoBehaviour
 
     public void SpawnTile(bool respawnCase = false)
     {
-        GameObject go = Instantiate(tilePrefabs[Random.Range(0, 5)]) as GameObject;        
+        GameObject go = Instantiate(tilePrefabs[Random.Range(0, tilePrefabs.Length)]) as GameObject;        
         go.transform.SetParent(transform);
         
         if (respawnCase)
         {
            spawnX = -10.0f;
-            // + Random.Range(-1.0f, 10.0f);
-            DeleteTile();
+           DeleteTile();
             respawnCase = false;
         }
         
         go.transform.position = new Vector3(spawnX, Random.Range(-4.0f, 1.0f), 0.0f);
         spawnX = spawnX + tileLength * 2;
-        // * Random.Range(1.0f, 2.0f);
         activeTiles.Add(go);
     }
     
@@ -82,12 +80,18 @@ public class TileManager : MonoBehaviour
         activeTiles.RemoveAt(0);
     }
 
-    public void SpawnGround()
+    public void SpawnGround(bool respawnCase = false)
     {
         GameObject ground = Instantiate(groundPrefab) as GameObject;
         ground.transform.SetParent(transform);
+        if (respawnCase)
+        {
+            groundSpawnX = -15.0f;
+            DeleteGround();
+            respawnCase = false;
+        }
         ground.transform.position = new Vector3(this.groundSpawnX, -8.0f, 0.0f);
-        groundSpawnX = groundSpawnX + groundLength;
+        groundSpawnX = groundSpawnX + groundLength - 7;
         activeGround.Add(ground);
     }
 
