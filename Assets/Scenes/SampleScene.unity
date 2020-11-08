@@ -727,16 +727,18 @@ MonoBehaviour:
   - {fileID: 2194831876256926497, guid: 899f1ba1ddbe3f94a8fa753d9c2684e3, type: 3}
   - {fileID: 1337478179135993997, guid: bcb837521d3078d4ca3bd5bf5f9c0fa4, type: 3}
   - {fileID: 13455034642726366, guid: f8add7d9420c3a14ab548d61ca98f310, type: 3}
-  - {fileID: 875749248510967729, guid: 0788be1522c390b47bc18f624b046a24, type: 3}
+  - {fileID: 90532433719364674, guid: 4a945ae24ce0e2e4cb98f583c7a46f3a, type: 3}
   groundPrefab: {fileID: 2638837032021488211, guid: 7c879f6a8c8aa2a46aafbc6d9405d54b,
     type: 3}
   playerTransform: {fileID: 2027510719}
-  spawnX: -15
+  spawnX: -5
   groundSpawnX: -15
   tileLength: 5
   groundLength: 29.44
   amountOfTilesOnScreen: 10
   amountOfGroundOnScreen: 2
+  activeTiles: []
+  activeGround: []
 --- !u!4 &1765451178
 Transform:
   m_ObjectHideFlags: 0
@@ -908,7 +910,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.7
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -988,6 +990,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalPosition: {x: 0, y: 0, z: 0}
+  tilePrefabs:
+  - {fileID: 2084498817187476730, guid: cc72c6891a77d4d4a946dbddecc22ed8, type: 3}
+  - {fileID: 2194831876256926497, guid: 899f1ba1ddbe3f94a8fa753d9c2684e3, type: 3}
+  - {fileID: 1337478179135993997, guid: bcb837521d3078d4ca3bd5bf5f9c0fa4, type: 3}
+  - {fileID: 13455034642726366, guid: f8add7d9420c3a14ab548d61ca98f310, type: 3}
+  - {fileID: 90532433719364674, guid: 4a945ae24ce0e2e4cb98f583c7a46f3a, type: 3}
+  tm: {fileID: 1765451177}
 --- !u!1001 &875749248429207522
 PrefabInstance:
   m_ObjectHideFlags: 0

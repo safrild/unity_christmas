@@ -8,9 +8,12 @@ public class Respawner : MonoBehaviour
     //  Original position to be restored
     public Vector3 originalPosition;
 
-    // Start is called before the first frame update
+    // public GameObject[] tilePrefabs;
+    public TileManager tm;
+
+
     void Start()
-    {
+    {        
         //  On Start store original position
         originalPosition = this.transform.position;
         //  And notify RespawnManager about self.
@@ -21,5 +24,16 @@ public class Respawner : MonoBehaviour
     public virtual void respawn()
     {
         this.transform.position = originalPosition;
+        tm.SpawnTile(true);
+        tm.SpawnGround();
+        /*for (int i = 0; i < tm.amountOfTilesOnScreen; i++)
+        {
+            tm.SpawnTile(true);
+        }
+        for (int i = 0; i < tm.amountOfGroundOnScreen; i++)
+        {
+            tm.SpawnGround();
+        }*/        
+        
     }
 }
