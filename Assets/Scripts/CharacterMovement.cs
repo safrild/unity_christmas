@@ -9,6 +9,8 @@ public class CharacterMovement : MonoBehaviour
 
     public static bool facingRight = true;
 
+    public Animator animator;
+
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -24,6 +26,8 @@ public class CharacterMovement : MonoBehaviour
         float horiz = Input.GetAxis("Horizontal");
         rb.AddForce(new Vector2(horiz * speed, 0.0f));
 
+        animator.SetFloat("speed", Mathf.Abs(horiz));
+
         if (facingRight && horiz < 0)
         {
             flip();
@@ -35,6 +39,7 @@ public class CharacterMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
+            animator.SetBool("isJumping", true);
             rb.AddForce(new Vector2(0.0f, jumpForce), ForceMode2D.Impulse);
         }
 
@@ -49,9 +54,15 @@ public class CharacterMovement : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Enemy")
         {
-            if(col.gameObject.tag=="Enemy") {
-				GameObject.FindGameObjectWithTag("GameManager").GetComponent<RespawnManager>().reset();
-            }
+			GameObject.FindGameObjectWithTag("GameManager").GetComponent<RespawnManager>().reset();
         }
+        if (col.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            animator.SetBool("isJumping", false);
+        }
+    }
+
 }

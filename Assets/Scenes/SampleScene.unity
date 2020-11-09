@@ -764,7 +764,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1807990487}
   - component: {fileID: 1807990488}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -961,6 +961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   jumpForce: 8
+  animator: {fileID: 2027510725}
 --- !u!114 &2027510723
 MonoBehaviour:
   m_ObjectHideFlags: 0
