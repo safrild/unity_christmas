@@ -12,9 +12,9 @@ public class TileManager : MonoBehaviour
 
     public Transform playerTransform;
 
-    public float spawnX = -10.0f;
+    public float spawnX = -5.0f;
     public float groundSpawnX = -15.0f;
-    public float backgroundSpawnX = 80.0f; 
+    public float backgroundSpawnX = -15.0f; 
 
     public float tileLength = 5.0f;
     public float groundLength = 29.44f;
@@ -22,7 +22,7 @@ public class TileManager : MonoBehaviour
 
     public int amountOfTilesOnScreen = 10;
     public int amountOfGroundOnScreen = 2;
-    public int amountOfBGOnScreen = 4;
+    public int amountOfBGOnScreen = 6;
 
     public List<GameObject> activeTiles;
     public List<GameObject> activeGround;
@@ -125,22 +125,23 @@ public class TileManager : MonoBehaviour
         bg2.transform.SetParent(transform);
         if (respawnCase)
         {
-            groundSpawnX = 80.0f;
+            backgroundSpawnX = -15.0f;
             DeleteBG();
             respawnCase = false;
         }
-        bg1.transform.position = new Vector3(this.backgroundSpawnX, -10.0f, 0.0f);
-        bg2.transform.position = new Vector3(this.backgroundSpawnX, -10.0f, 0.0f);
+        bg1.transform.position = new Vector3(this.backgroundSpawnX, -7.0f, 0.0f);
+        bg2.transform.position = new Vector3(this.backgroundSpawnX, -7.0f, 0.0f);
         backgroundSpawnX = backgroundSpawnX + backgroundLength;
         activeBG.Add(bg1);
         activeBG.Add(bg2);
     }
 
-    void DeleteBG()
+    public void DeleteBG()
     {
         Destroy(activeBG[0]);
-        //Destroy(activeBG[1]);
         activeBG.RemoveAt(0);
-        //activeGround.RemoveAt(1);
+        Destroy(activeBG[0]);
+        
+        activeBG.RemoveAt(0);
     }   
 }
