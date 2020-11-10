@@ -6,6 +6,7 @@ public class TileManager : MonoBehaviour
 {
     public GameObject[] tilePrefabs;
     public GameObject groundPrefab;
+    public GameObject[] backgroundPrefabs;
 
     public Random rand = new Random();
 
@@ -13,20 +14,25 @@ public class TileManager : MonoBehaviour
 
     public float spawnX = -10.0f;
     public float groundSpawnX = -15.0f;
+    public float backgroundSpawnX = 80.0f; 
 
     public float tileLength = 5.0f;
     public float groundLength = 29.44f;
+    public float backgroundLength = 13.0f;
 
     public int amountOfTilesOnScreen = 10;
     public int amountOfGroundOnScreen = 2;
+    public int amountOfBGOnScreen = 4;
 
     public List<GameObject> activeTiles;
     public List<GameObject> activeGround;
+    public List<GameObject> activeBG;
 
     void Start()
     {
         activeTiles = new List<GameObject>();
         activeGround = new List<GameObject>();
+        activeBG = new List<GameObject>();
 
         playerTransform = GameObject.FindGameObjectWithTag("Santa").transform;
 
@@ -37,6 +43,10 @@ public class TileManager : MonoBehaviour
         for (int i = 0; i < amountOfGroundOnScreen; i++)
         {
             SpawnGround();
+        }
+        for (int i = 0; i < amountOfBGOnScreen; i++)
+        {
+            SpawnBG();
         }
 
     }
@@ -53,6 +63,12 @@ public class TileManager : MonoBehaviour
         {
             SpawnGround();
             DeleteGround();
+        }
+
+        if (playerTransform.position.x >= (backgroundSpawnX - amountOfBGOnScreen * backgroundLength))
+        {
+            SpawnBG();
+            DeleteBG();
         }
 
     }
@@ -100,4 +116,31 @@ public class TileManager : MonoBehaviour
         Destroy(activeGround[0]);
         activeGround.RemoveAt(0);
     }
+
+    public void SpawnBG(bool respawnCase = false)
+    {
+        GameObject bg1 = Instantiate(backgroundPrefabs[0]) as GameObject;
+        GameObject bg2 = Instantiate(backgroundPrefabs[1]) as GameObject;
+        bg1.transform.SetParent(transform);
+        bg2.transform.SetParent(transform);
+        if (respawnCase)
+        {
+            groundSpawnX = 80.0f;
+            DeleteBG();
+            respawnCase = false;
+        }
+        bg1.transform.position = new Vector3(this.backgroundSpawnX, -10.0f, 0.0f);
+        bg2.transform.position = new Vector3(this.backgroundSpawnX, -10.0f, 0.0f);
+        backgroundSpawnX = backgroundSpawnX + backgroundLength;
+        activeBG.Add(bg1);
+        activeBG.Add(bg2);
+    }
+
+    void DeleteBG()
+    {
+        Destroy(activeBG[0]);
+        //Destroy(activeBG[1]);
+        activeBG.RemoveAt(0);
+        //activeGround.RemoveAt(1);
+    }   
 }

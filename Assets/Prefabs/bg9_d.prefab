@@ -298,7 +298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5070397330373397678}
   - component: {fileID: 2560688076236002707}
-  - component: {fileID: 6308048009022508509}
+  - component: {fileID: 7137217878426401661}
   m_Layer: 0
   m_Name: bg9_d
   m_TagString: Untagged
@@ -377,7 +377,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6308048009022508509
+--- !u!114 &7137217878426401661
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

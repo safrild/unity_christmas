@@ -26,6 +26,7 @@ public class Respawner : MonoBehaviour
         this.transform.position = originalPosition;
         tm.SpawnTile(true);
         tm.SpawnGround(true);
+        tm.SpawnBG(true);
         /*for (int i = 0; i < tm.amountOfTilesOnScreen; i++)
         {
             tm.SpawnTile(true);

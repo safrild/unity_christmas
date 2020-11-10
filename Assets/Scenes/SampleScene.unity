@@ -216,7 +216,7 @@ PrefabInstance:
     - target: {fileID: 5379018575323968214, guid: be1aa8a1c7e5b7c4faa31f17caf001d6,
         type: 3}
       propertyPath: parallaxEffect
-      value: 0.5
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 5814784832877547839, guid: be1aa8a1c7e5b7c4faa31f17caf001d6,
         type: 3}
@@ -291,7 +291,7 @@ PrefabInstance:
     - target: {fileID: 8651881878585467995, guid: be1aa8a1c7e5b7c4faa31f17caf001d6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8651881878585467995, guid: be1aa8a1c7e5b7c4faa31f17caf001d6,
         type: 3}
@@ -527,7 +527,7 @@ PrefabInstance:
     - target: {fileID: 5070397330373397678, guid: 9de1d0ca298b95f47a03566edf831b50,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.042
+      value: 15.041999
       objectReference: {fileID: 0}
     - target: {fileID: 5070397330373397678, guid: 9de1d0ca298b95f47a03566edf831b50,
         type: 3}
@@ -562,7 +562,7 @@ PrefabInstance:
     - target: {fileID: 5070397330373397678, guid: 9de1d0ca298b95f47a03566edf831b50,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5070397330373397678, guid: 9de1d0ca298b95f47a03566edf831b50,
         type: 3}
@@ -589,45 +589,40 @@ PrefabInstance:
       propertyPath: parallaxEffect
       value: 0.7
       objectReference: {fileID: 0}
-    - target: {fileID: 6308048009022508509, guid: 9de1d0ca298b95f47a03566edf831b50,
+    - target: {fileID: 6346081738403484777, guid: 9de1d0ca298b95f47a03566edf831b50,
         type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 519420028}
-    - target: {fileID: 6308048009022508509, guid: 9de1d0ca298b95f47a03566edf831b50,
-        type: 3}
-      propertyPath: parallaxEffect
-      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6346081738403484777, guid: 9de1d0ca298b95f47a03566edf831b50,
         type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420028}
-    - target: {fileID: 6346081738403484777, guid: 9de1d0ca298b95f47a03566edf831b50,
+      propertyPath: parallaxEffect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137217878426401661, guid: 9de1d0ca298b95f47a03566edf831b50,
         type: 3}
       propertyPath: parallaxEffect
-      value: 0.7
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 7429552427538416629, guid: 9de1d0ca298b95f47a03566edf831b50,
         type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 519420028}
+      objectReference: {fileID: 0}
     - target: {fileID: 7429552427538416629, guid: 9de1d0ca298b95f47a03566edf831b50,
         type: 3}
       propertyPath: parallaxEffect
-      value: 0.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9048589235148860501, guid: 9de1d0ca298b95f47a03566edf831b50,
         type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 519420028}
+      objectReference: {fileID: 0}
     - target: {fileID: 9048589235148860501, guid: 9de1d0ca298b95f47a03566edf831b50,
         type: 3}
       propertyPath: parallaxEffect
-      value: 0.7
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9de1d0ca298b95f47a03566edf831b50, type: 3}
@@ -659,7 +654,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1583083498 stripped
 GameObject:
@@ -731,15 +726,22 @@ MonoBehaviour:
   - {fileID: 9186211607309893657, guid: 45aca57f39a6c36449a8f0bacd41a448, type: 3}
   groundPrefab: {fileID: 2638837032021488211, guid: 7c879f6a8c8aa2a46aafbc6d9405d54b,
     type: 3}
+  backgroundPrefabs:
+  - {fileID: 7679038778251733231, guid: be1aa8a1c7e5b7c4faa31f17caf001d6, type: 3}
+  - {fileID: 4531719307019189197, guid: 9de1d0ca298b95f47a03566edf831b50, type: 3}
   playerTransform: {fileID: 2027510719}
   spawnX: -5
   groundSpawnX: -15
+  backgroundSpawnX: 0
   tileLength: 5
   groundLength: 29.44
+  backgroundLength: 13
   amountOfTilesOnScreen: 10
   amountOfGroundOnScreen: 2
+  amountOfBGOnScreen: 1
   activeTiles: []
   activeGround: []
+  activeBG: []
 --- !u!4 &1765451178
 Transform:
   m_ObjectHideFlags: 0
