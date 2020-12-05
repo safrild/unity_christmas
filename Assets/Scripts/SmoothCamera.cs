@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SmoothCamera : MonoBehaviour
 {
-    public float speed = 1.0f;
+    public float speed = 0.5f;
     public Transform target;
     public Vector3 offset;
     // Start is called before the first frame update
