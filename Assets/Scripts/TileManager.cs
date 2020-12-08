@@ -59,7 +59,7 @@ public class TileManager : MonoBehaviour
             DeleteTile();
         }
 
-        if (playerTransform.position.x >= (groundSpawnX - 0.3 *  groundLength))
+        if (playerTransform.position.x >= (groundSpawnX - 0.1 * groundLength))
         {
             SpawnGround();
             DeleteGround();
