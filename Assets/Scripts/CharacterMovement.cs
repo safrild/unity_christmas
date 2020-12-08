@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public float speed = 4f;
+    public float speed = 6f;
     public float jumpForce = 4f;
 
     public static bool facingRight = true;
